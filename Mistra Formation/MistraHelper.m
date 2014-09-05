@@ -483,10 +483,10 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
         NSString * articleString = articleWithImage[@"content"];
         
         // We will search for the img tag and extract it
-        NSRegularExpression * imageSourceFinderExpression = [[NSRegularExpression alloc] initWithPattern:@"<img.*?src=\\\"(.*?)\\\"" options:0 error:nil];
+        NSRegularExpression * imageSourceFinderExpression = [[NSRegularExpression alloc] initWithPattern:@"<img.*?src=\\\"(.*?)\\\"" options:NSRegularExpressionCaseInsensitive error:nil];
         
         // For each img tag we find
-        [imageSourceFinderExpression enumerateMatchesInString:articleString options:0 range:NSRangeFromString([NSString stringWithFormat:@"(0, %lu)",(unsigned long)articleString.length]) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop)
+        [imageSourceFinderExpression enumerateMatchesInString:articleString options:NSMatchingReportCompletion range:NSRangeFromString([NSString stringWithFormat:@"(0, %lu)",(unsigned long)articleString.length]) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop)
          {
              NSString * imageTag = [articleString substringWithRange:result.range];
              

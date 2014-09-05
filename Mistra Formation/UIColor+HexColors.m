@@ -17,7 +17,7 @@
     }
     
     // Brutal and not-very elegant test for non hex-numeric characters
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[^a-fA-F|0-9]" options:0 error:nil];
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[^a-fA-F|0-9]" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger match = [regex numberOfMatchesInString:hexString options:NSMatchingReportCompletion range:NSMakeRange(0, [hexString length])];
     
     if (match != 0) {
