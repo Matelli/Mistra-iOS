@@ -614,7 +614,10 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-objc-missing-property-synthesis",
+				);
 			};
 			name = Debug;
 		};
@@ -651,7 +654,10 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Weverything",
+					"-Wno-objc-missing-property-synthesis",
+				);
 			};
 			name = Release;
 		};
