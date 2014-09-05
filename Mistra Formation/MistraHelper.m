@@ -49,7 +49,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^
     {
-        _operationQueue = [[NSOperationQueue alloc] init];
+        self->_operationQueue = [[NSOperationQueue alloc] init];
     });
     
     return _operationQueue;
@@ -61,8 +61,8 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^
     {
-        _sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://api.mistra.fr"]];
-        _sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        self->_sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://api.mistra.fr"]];
+        self->_sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     });
     
     return _sessionManager;
