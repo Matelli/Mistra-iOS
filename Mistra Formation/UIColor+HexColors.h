@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Charismatic Megafauna Ltd. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface UIColor (HexColors)
 

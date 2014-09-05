@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Mistra. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <BlockRSSParser/RSSParser.h>
 #import "MistraCategory+CRUD.h"
 #import "MistraArticle+CRUD.h"

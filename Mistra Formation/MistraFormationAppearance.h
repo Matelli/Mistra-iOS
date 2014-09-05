@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Mistra. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface MistraFormationAppearance : NSObject
 
 + (void) apply;

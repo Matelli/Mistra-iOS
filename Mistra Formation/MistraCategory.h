@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Mistra. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+@import CoreData;
 #import "MistraItem.h"
 
 @class MistraArticle, MistraCategory;

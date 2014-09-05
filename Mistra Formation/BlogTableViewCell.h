@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Mistra. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface BlogTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *blogImageView;

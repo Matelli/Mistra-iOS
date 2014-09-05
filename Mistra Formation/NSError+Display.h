@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Florian BUREL. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface NSError (Display)
 
 - (void) displayLocalizedError;

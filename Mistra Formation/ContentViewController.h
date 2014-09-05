@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Mistra. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface ContentViewController : UIViewController
 
 @property (strong, nonatomic) MistraArticle * article;

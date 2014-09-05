@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Mistra. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 typedef void(^contextSaveCompletion)(BOOL success, NSError * error);
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
