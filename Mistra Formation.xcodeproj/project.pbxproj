@@ -1,0 +1,773 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		480EAE951998A70B00A67213 /* MistraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 480EAE941998A70B00A67213 /* MistraHelper.m */; };
+		480EB3431999EF7900A67213 /* images.zip in Resources */ = {isa = PBXBuildFile; fileRef = 480EB3411999EF7900A67213 /* images.zip */; };
+		480EB34C199A4DD100A67213 /* QuoteRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 480EB34B199A4DD100A67213 /* QuoteRequestViewController.m */; };
+		48145BAF19B9C975006823EB /* MistraArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 48145BA619B9C975006823EB /* MistraArticle.m */; };
+		48145BB019B9C975006823EB /* MistraArticle+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48145BA819B9C975006823EB /* MistraArticle+CRUD.m */; };
+		48145BB119B9C975006823EB /* MistraCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 48145BAA19B9C975006823EB /* MistraCategory.m */; };
+		48145BB219B9C975006823EB /* MistraCategory+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48145BAC19B9C975006823EB /* MistraCategory+CRUD.m */; };
+		48145BB319B9C975006823EB /* MistraItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 48145BAE19B9C975006823EB /* MistraItem.m */; };
+		48145BBC19B9CBDB006823EB /* MistraFormation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48145BBA19B9CBDB006823EB /* MistraFormation.xcdatamodeld */; };
+		48145BBE19B9CDF6006823EB /* MistraFormation.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 48145BBD19B9CDF6006823EB /* MistraFormation.sqlite */; };
+		484424CF19B5BA3E00FDBA34 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 484424CE19B5BA3E00FDBA34 /* ContactViewController.m */; };
+		484424D219B5BAE200FDBA34 /* ContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 484424D119B5BAE200FDBA34 /* ContactTableViewCell.m */; };
+		4869F8601993B58100533E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4869F85F1993B58100533E96 /* Foundation.framework */; };
+		4869F8621993B58100533E96 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4869F8611993B58100533E96 /* CoreGraphics.framework */; };
+		4869F8641993B58100533E96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4869F8631993B58100533E96 /* UIKit.framework */; };
+		4869F86A1993B58100533E96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4869F8681993B58100533E96 /* InfoPlist.strings */; };
+		4869F86C1993B58100533E96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869F86B1993B58100533E96 /* main.m */; };
+		4869F8701993B58100533E96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869F86F1993B58100533E96 /* AppDelegate.m */; };
+		4869F8721993B58100533E96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4869F8711993B58100533E96 /* Images.xcassets */; };
+		4869F8791993B58100533E96 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4869F8781993B58100533E96 /* XCTest.framework */; };
+		4869F87A1993B58100533E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4869F85F1993B58100533E96 /* Foundation.framework */; };
+		4869F87B1993B58100533E96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4869F8631993B58100533E96 /* UIKit.framework */; };
+		4869F8831993B58100533E96 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4869F8811993B58100533E96 /* InfoPlist.strings */; };
+		4869F8851993B58100533E96 /* Mistra_FormationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869F8841993B58100533E96 /* Mistra_FormationTests.m */; };
+		4869F88F1993B69300533E96 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4869F88E1993B69300533E96 /* iPhone.storyboard */; };
+		4869F8921993BE3700533E96 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869F8911993BE3700533E96 /* MenuTableViewController.m */; };
+		4869F8951994D75F00533E96 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869F8941994D75F00533E96 /* HomeViewController.m */; };
+		4869F8981994FAB800533E96 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4869F8971994FAB800533E96 /* ContentViewController.m */; };
+		487BFEA1199CC34A00C4B7ED /* BlogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BFEA0199CC34A00C4B7ED /* BlogTableViewController.m */; };
+		487BFEA4199CE93B00C4B7ED /* BlogContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BFEA3199CE93B00C4B7ED /* BlogContentViewController.m */; };
+		487BFEA6199CF1FA00C4B7ED /* mistraRSS.rss in Resources */ = {isa = PBXBuildFile; fileRef = 487BFEA5199CF1FA00C4B7ED /* mistraRSS.rss */; };
+		4882835919A393C200C4097C /* NSError+Display.m in Sources */ = {isa = PBXBuildFile; fileRef = 4882835819A393C200C4097C /* NSError+Display.m */; };
+		4882835D19A4877300C4097C /* MenuHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4882835C19A4877300C4097C /* MenuHeaderTableViewCell.m */; };
+		4882836019A48B4900C4097C /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4882835F19A48B4900C4097C /* MenuTableViewCell.m */; };
+		4882836319A493C400C4097C /* MistraFormationAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 4882836219A493C400C4097C /* MistraFormationAppearance.m */; };
+		4882836719A49EBC00C4097C /* UIColor+HexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4882836619A49EBC00C4097C /* UIColor+HexColors.m */; };
+		4882837419A4AA3700C4097C /* Neris-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882836A19A4AA3700C4097C /* Neris-Black.otf */; };
+		4882837519A4AA3700C4097C /* Neris-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882836B19A4AA3700C4097C /* Neris-BlackItalic.otf */; };
+		4882837619A4AA3700C4097C /* Neris-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882836C19A4AA3700C4097C /* Neris-BoldItalic.otf */; };
+		4882837719A4AA3700C4097C /* Neris-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882836D19A4AA3700C4097C /* Neris-Light.otf */; };
+		4882837819A4AA3700C4097C /* Neris-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882836E19A4AA3700C4097C /* Neris-LightItalic.otf */; };
+		4882837919A4AA3700C4097C /* Neris-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882836F19A4AA3700C4097C /* Neris-SemiBold.otf */; };
+		4882837A19A4AA3700C4097C /* Neris-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882837019A4AA3700C4097C /* Neris-SemiBoldItalic.otf */; };
+		4882837B19A4AA3700C4097C /* Neris-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882837119A4AA3700C4097C /* Neris-Thin.otf */; };
+		4882837C19A4AA3700C4097C /* Neris-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882837219A4AA3700C4097C /* Neris-ThinItalic.otf */; };
+		4882838419A6249400C4097C /* BlogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4882838319A6249400C4097C /* BlogTableViewCell.m */; };
+		488283AE19A759EA00C4097C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 488283AD19A759EA00C4097C /* Settings.bundle */; };
+		E1BFC87261A143238D0C9666 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D3AAB950094B549A7653A0 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4869F87C1993B58100533E96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4869F8541993B58100533E96 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4869F85B1993B58100533E96;
+			remoteInfo = "Mistra Formation";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		480EAE931998A70B00A67213 /* MistraHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MistraHelper.h; sourceTree = "<group>"; };
+		480EAE941998A70B00A67213 /* MistraHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MistraHelper.m; sourceTree = "<group>"; };
+		480EB3411999EF7900A67213 /* images.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = images.zip; sourceTree = "<group>"; };
+		480EB34A199A4DD100A67213 /* QuoteRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteRequestViewController.h; sourceTree = "<group>"; };
+		480EB34B199A4DD100A67213 /* QuoteRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteRequestViewController.m; sourceTree = "<group>"; };
+		48145BA519B9C975006823EB /* MistraArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MistraArticle.h; sourceTree = "<group>"; };
+		48145BA619B9C975006823EB /* MistraArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MistraArticle.m; sourceTree = "<group>"; };
+		48145BA719B9C975006823EB /* MistraArticle+CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MistraArticle+CRUD.h"; sourceTree = "<group>"; };
+		48145BA819B9C975006823EB /* MistraArticle+CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MistraArticle+CRUD.m"; sourceTree = "<group>"; };
+		48145BA919B9C975006823EB /* MistraCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MistraCategory.h; sourceTree = "<group>"; };
+		48145BAA19B9C975006823EB /* MistraCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MistraCategory.m; sourceTree = "<group>"; };
+		48145BAB19B9C975006823EB /* MistraCategory+CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MistraCategory+CRUD.h"; sourceTree = "<group>"; };
+		48145BAC19B9C975006823EB /* MistraCategory+CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MistraCategory+CRUD.m"; sourceTree = "<group>"; };
+		48145BAD19B9C975006823EB /* MistraItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MistraItem.h; sourceTree = "<group>"; };
+		48145BAE19B9C975006823EB /* MistraItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MistraItem.m; sourceTree = "<group>"; };
+		48145BBB19B9CBDB006823EB /* MistraFormation.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MistraFormation.xcdatamodel; sourceTree = "<group>"; };
+		48145BBD19B9CDF6006823EB /* MistraFormation.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = MistraFormation.sqlite; path = Ressources/MistraFormation.sqlite; sourceTree = SOURCE_ROOT; };
+		484424CD19B5BA3E00FDBA34 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		484424CE19B5BA3E00FDBA34 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		484424D019B5BAE200FDBA34 /* ContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTableViewCell.h; sourceTree = "<group>"; };
+		484424D119B5BAE200FDBA34 /* ContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTableViewCell.m; sourceTree = "<group>"; };
+		4869F85C1993B58100533E96 /* Mistra Formation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mistra Formation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4869F85F1993B58100533E96 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4869F8611993B58100533E96 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4869F8631993B58100533E96 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4869F8671993B58100533E96 /* Mistra Formation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mistra Formation-Info.plist"; sourceTree = "<group>"; };
+		4869F8691993B58100533E96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4869F86B1993B58100533E96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4869F86D1993B58100533E96 /* Mistra Formation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mistra Formation-Prefix.pch"; sourceTree = "<group>"; };
+		4869F86E1993B58100533E96 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4869F86F1993B58100533E96 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4869F8711993B58100533E96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4869F8771993B58100533E96 /* Mistra FormationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mistra FormationTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4869F8781993B58100533E96 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4869F8801993B58100533E96 /* Mistra FormationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mistra FormationTests-Info.plist"; sourceTree = "<group>"; };
+		4869F8821993B58100533E96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4869F8841993B58100533E96 /* Mistra_FormationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mistra_FormationTests.m; sourceTree = "<group>"; };
+		4869F88E1993B69300533E96 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		4869F8901993BE3700533E96 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
+		4869F8911993BE3700533E96 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
+		4869F8931994D75F00533E96 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		4869F8941994D75F00533E96 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		4869F8961994FAB800533E96 /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		4869F8971994FAB800533E96 /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		4869F8991995011600533E96 /* libPods-DTCoreText.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-DTCoreText.a"; path = "Pods/build/Debug-iphoneos/libPods-DTCoreText.a"; sourceTree = "<group>"; };
+		487BFE9F199CC34A00C4B7ED /* BlogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogTableViewController.h; sourceTree = "<group>"; };
+		487BFEA0199CC34A00C4B7ED /* BlogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogTableViewController.m; sourceTree = "<group>"; };
+		487BFEA2199CE93B00C4B7ED /* BlogContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogContentViewController.h; sourceTree = "<group>"; };
+		487BFEA3199CE93B00C4B7ED /* BlogContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogContentViewController.m; sourceTree = "<group>"; };
+		487BFEA5199CF1FA00C4B7ED /* mistraRSS.rss */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = mistraRSS.rss; sourceTree = "<group>"; };
+		4882835719A393C200C4097C /* NSError+Display.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Display.h"; sourceTree = "<group>"; };
+		4882835819A393C200C4097C /* NSError+Display.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Display.m"; sourceTree = "<group>"; };
+		4882835B19A4877300C4097C /* MenuHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuHeaderTableViewCell.h; sourceTree = "<group>"; };
+		4882835C19A4877300C4097C /* MenuHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuHeaderTableViewCell.m; sourceTree = "<group>"; };
+		4882835E19A48B4900C4097C /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		4882835F19A48B4900C4097C /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		4882836119A493C400C4097C /* MistraFormationAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MistraFormationAppearance.h; sourceTree = "<group>"; };
+		4882836219A493C400C4097C /* MistraFormationAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MistraFormationAppearance.m; sourceTree = "<group>"; };
+		4882836519A49EBC00C4097C /* UIColor+HexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColors.h"; sourceTree = "<group>"; };
+		4882836619A49EBC00C4097C /* UIColor+HexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColors.m"; sourceTree = "<group>"; };
+		4882836A19A4AA3700C4097C /* Neris-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-Black.otf"; sourceTree = "<group>"; };
+		4882836B19A4AA3700C4097C /* Neris-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-BlackItalic.otf"; sourceTree = "<group>"; };
+		4882836C19A4AA3700C4097C /* Neris-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-BoldItalic.otf"; sourceTree = "<group>"; };
+		4882836D19A4AA3700C4097C /* Neris-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-Light.otf"; sourceTree = "<group>"; };
+		4882836E19A4AA3700C4097C /* Neris-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-LightItalic.otf"; sourceTree = "<group>"; };
+		4882836F19A4AA3700C4097C /* Neris-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-SemiBold.otf"; sourceTree = "<group>"; };
+		4882837019A4AA3700C4097C /* Neris-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		4882837119A4AA3700C4097C /* Neris-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-Thin.otf"; sourceTree = "<group>"; };
+		4882837219A4AA3700C4097C /* Neris-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neris-ThinItalic.otf"; sourceTree = "<group>"; };
+		4882838019A4EF3F00C4097C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4882838119A4EF3F00C4097C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4882838219A6249400C4097C /* BlogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogTableViewCell.h; sourceTree = "<group>"; };
+		4882838319A6249400C4097C /* BlogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogTableViewCell.m; sourceTree = "<group>"; };
+		488283AD19A759EA00C4097C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Ressources/Settings.bundle; sourceTree = SOURCE_ROOT; };
+		C5A2B9A3693C40EA89EE4B8A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E6D3AAB950094B549A7653A0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4869F8591993B58100533E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4869F8621993B58100533E96 /* CoreGraphics.framework in Frameworks */,
+				4869F8641993B58100533E96 /* UIKit.framework in Frameworks */,
+				4869F8601993B58100533E96 /* Foundation.framework in Frameworks */,
+				E1BFC87261A143238D0C9666 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4869F8741993B58100533E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4869F8791993B58100533E96 /* XCTest.framework in Frameworks */,
+				4869F87B1993B58100533E96 /* UIKit.framework in Frameworks */,
+				4869F87A1993B58100533E96 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		480EB33F1999EF7900A67213 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				4882836819A4AA3700C4097C /* Font - Neris */,
+				480EB3411999EF7900A67213 /* images.zip */,
+				487BFEA5199CF1FA00C4B7ED /* mistraRSS.rss */,
+			);
+			path = Ressources;
+			sourceTree = SOURCE_ROOT;
+		};
+		480EB34D199B42AA00A67213 /* Storyboard & Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				4869F88E1993B69300533E96 /* iPhone.storyboard */,
+				4882836119A493C400C4097C /* MistraFormationAppearance.h */,
+				4882836219A493C400C4097C /* MistraFormationAppearance.m */,
+			);
+			name = "Storyboard & Appearance";
+			sourceTree = "<group>";
+		};
+		480EB34E199B42B800A67213 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				480EAE931998A70B00A67213 /* MistraHelper.h */,
+				480EAE941998A70B00A67213 /* MistraHelper.m */,
+				48145BBA19B9CBDB006823EB /* MistraFormation.xcdatamodeld */,
+				48145BAD19B9C975006823EB /* MistraItem.h */,
+				48145BAE19B9C975006823EB /* MistraItem.m */,
+				48145BA519B9C975006823EB /* MistraArticle.h */,
+				48145BA619B9C975006823EB /* MistraArticle.m */,
+				48145BA719B9C975006823EB /* MistraArticle+CRUD.h */,
+				48145BA819B9C975006823EB /* MistraArticle+CRUD.m */,
+				48145BA919B9C975006823EB /* MistraCategory.h */,
+				48145BAA19B9C975006823EB /* MistraCategory.m */,
+				48145BAB19B9C975006823EB /* MistraCategory+CRUD.h */,
+				48145BAC19B9C975006823EB /* MistraCategory+CRUD.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		480EB34F199B42C600A67213 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4869F8931994D75F00533E96 /* HomeViewController.h */,
+				4869F8941994D75F00533E96 /* HomeViewController.m */,
+				4869F8901993BE3700533E96 /* MenuTableViewController.h */,
+				4869F8911993BE3700533E96 /* MenuTableViewController.m */,
+				4869F8961994FAB800533E96 /* ContentViewController.h */,
+				4869F8971994FAB800533E96 /* ContentViewController.m */,
+				480EB34A199A4DD100A67213 /* QuoteRequestViewController.h */,
+				480EB34B199A4DD100A67213 /* QuoteRequestViewController.m */,
+				484424CD19B5BA3E00FDBA34 /* ContactViewController.h */,
+				484424CE19B5BA3E00FDBA34 /* ContactViewController.m */,
+				487BFE9F199CC34A00C4B7ED /* BlogTableViewController.h */,
+				487BFEA0199CC34A00C4B7ED /* BlogTableViewController.m */,
+				487BFEA2199CE93B00C4B7ED /* BlogContentViewController.h */,
+				487BFEA3199CE93B00C4B7ED /* BlogContentViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4869F8531993B58100533E96 = {
+			isa = PBXGroup;
+			children = (
+				4869F8651993B58100533E96 /* Mistra Formation */,
+				4869F87E1993B58100533E96 /* Mistra FormationTests */,
+				4869F85E1993B58100533E96 /* Frameworks */,
+				4869F85D1993B58100533E96 /* Products */,
+				C5A2B9A3693C40EA89EE4B8A /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		4869F85D1993B58100533E96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4869F85C1993B58100533E96 /* Mistra Formation.app */,
+				4869F8771993B58100533E96 /* Mistra FormationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4869F85E1993B58100533E96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4869F8991995011600533E96 /* libPods-DTCoreText.a */,
+				4869F85F1993B58100533E96 /* Foundation.framework */,
+				4869F8611993B58100533E96 /* CoreGraphics.framework */,
+				4869F8631993B58100533E96 /* UIKit.framework */,
+				4869F8781993B58100533E96 /* XCTest.framework */,
+				E6D3AAB950094B549A7653A0 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4869F8651993B58100533E96 /* Mistra Formation */ = {
+			isa = PBXGroup;
+			children = (
+				4869F86E1993B58100533E96 /* AppDelegate.h */,
+				4869F86F1993B58100533E96 /* AppDelegate.m */,
+				4882836419A49E9F00C4097C /* Categories */,
+				480EB34D199B42AA00A67213 /* Storyboard & Appearance */,
+				480EB34E199B42B800A67213 /* Model */,
+				4882835A19A4875100C4097C /* Visual */,
+				480EB34F199B42C600A67213 /* Controller */,
+				480EB33F1999EF7900A67213 /* Ressources */,
+				4869F8711993B58100533E96 /* Images.xcassets */,
+				4869F8661993B58100533E96 /* Supporting Files */,
+			);
+			path = "Mistra Formation";
+			sourceTree = "<group>";
+		};
+		4869F8661993B58100533E96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48145BBD19B9CDF6006823EB /* MistraFormation.sqlite */,
+				488283AD19A759EA00C4097C /* Settings.bundle */,
+				4869F8671993B58100533E96 /* Mistra Formation-Info.plist */,
+				4869F8681993B58100533E96 /* InfoPlist.strings */,
+				4869F86B1993B58100533E96 /* main.m */,
+				4869F86D1993B58100533E96 /* Mistra Formation-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4869F87E1993B58100533E96 /* Mistra FormationTests */ = {
+			isa = PBXGroup;
+			children = (
+				4869F8841993B58100533E96 /* Mistra_FormationTests.m */,
+				4869F87F1993B58100533E96 /* Supporting Files */,
+			);
+			path = "Mistra FormationTests";
+			sourceTree = "<group>";
+		};
+		4869F87F1993B58100533E96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4869F8801993B58100533E96 /* Mistra FormationTests-Info.plist */,
+				4869F8811993B58100533E96 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4882835A19A4875100C4097C /* Visual */ = {
+			isa = PBXGroup;
+			children = (
+				4882835B19A4877300C4097C /* MenuHeaderTableViewCell.h */,
+				4882835C19A4877300C4097C /* MenuHeaderTableViewCell.m */,
+				4882835E19A48B4900C4097C /* MenuTableViewCell.h */,
+				4882835F19A48B4900C4097C /* MenuTableViewCell.m */,
+				4882838219A6249400C4097C /* BlogTableViewCell.h */,
+				4882838319A6249400C4097C /* BlogTableViewCell.m */,
+				484424D019B5BAE200FDBA34 /* ContactTableViewCell.h */,
+				484424D119B5BAE200FDBA34 /* ContactTableViewCell.m */,
+			);
+			name = Visual;
+			sourceTree = "<group>";
+		};
+		4882836419A49E9F00C4097C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4882835719A393C200C4097C /* NSError+Display.h */,
+				4882835819A393C200C4097C /* NSError+Display.m */,
+				4882836519A49EBC00C4097C /* UIColor+HexColors.h */,
+				4882836619A49EBC00C4097C /* UIColor+HexColors.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		4882836819A4AA3700C4097C /* Font - Neris */ = {
+			isa = PBXGroup;
+			children = (
+				4882836A19A4AA3700C4097C /* Neris-Black.otf */,
+				4882836B19A4AA3700C4097C /* Neris-BlackItalic.otf */,
+				4882836C19A4AA3700C4097C /* Neris-BoldItalic.otf */,
+				4882836D19A4AA3700C4097C /* Neris-Light.otf */,
+				4882836E19A4AA3700C4097C /* Neris-LightItalic.otf */,
+				4882836F19A4AA3700C4097C /* Neris-SemiBold.otf */,
+				4882837019A4AA3700C4097C /* Neris-SemiBoldItalic.otf */,
+				4882837119A4AA3700C4097C /* Neris-Thin.otf */,
+				4882837219A4AA3700C4097C /* Neris-ThinItalic.otf */,
+			);
+			name = "Font - Neris";
+			path = "../Mistra Formation/neris";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4869F85B1993B58100533E96 /* Mistra Formation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4869F8881993B58100533E96 /* Build configuration list for PBXNativeTarget "Mistra Formation" */;
+			buildPhases = (
+				F0546ABB2AF64B8ABC40557D /* Check Pods Manifest.lock */,
+				4869F8581993B58100533E96 /* Sources */,
+				4869F8591993B58100533E96 /* Frameworks */,
+				4869F85A1993B58100533E96 /* Resources */,
+				6442427749124CF7957E467A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mistra Formation";
+			productName = "Mistra Formation";
+			productReference = 4869F85C1993B58100533E96 /* Mistra Formation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4869F8761993B58100533E96 /* Mistra FormationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4869F88B1993B58100533E96 /* Build configuration list for PBXNativeTarget "Mistra FormationTests" */;
+			buildPhases = (
+				4869F8731993B58100533E96 /* Sources */,
+				4869F8741993B58100533E96 /* Frameworks */,
+				4869F8751993B58100533E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4869F87D1993B58100533E96 /* PBXTargetDependency */,
+			);
+			name = "Mistra FormationTests";
+			productName = "Mistra FormationTests";
+			productReference = 4869F8771993B58100533E96 /* Mistra FormationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4869F8541993B58100533E96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Mistra;
+				TargetAttributes = {
+					4869F85B1993B58100533E96 = {
+						DevelopmentTeam = 54KKJP645U;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					4869F8761993B58100533E96 = {
+						TestTargetID = 4869F85B1993B58100533E96;
+					};
+				};
+			};
+			buildConfigurationList = 4869F8571993B58100533E96 /* Build configuration list for PBXProject "Mistra Formation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				fr,
+			);
+			mainGroup = 4869F8531993B58100533E96;
+			productRefGroup = 4869F85D1993B58100533E96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4869F85B1993B58100533E96 /* Mistra Formation */,
+				4869F8761993B58100533E96 /* Mistra FormationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4869F85A1993B58100533E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4882837C19A4AA3700C4097C /* Neris-ThinItalic.otf in Resources */,
+				4882837519A4AA3700C4097C /* Neris-BlackItalic.otf in Resources */,
+				4882837A19A4AA3700C4097C /* Neris-SemiBoldItalic.otf in Resources */,
+				4882837919A4AA3700C4097C /* Neris-SemiBold.otf in Resources */,
+				4882837719A4AA3700C4097C /* Neris-Light.otf in Resources */,
+				48145BBE19B9CDF6006823EB /* MistraFormation.sqlite in Resources */,
+				4869F86A1993B58100533E96 /* InfoPlist.strings in Resources */,
+				480EB3431999EF7900A67213 /* images.zip in Resources */,
+				4882837419A4AA3700C4097C /* Neris-Black.otf in Resources */,
+				488283AE19A759EA00C4097C /* Settings.bundle in Resources */,
+				4869F88F1993B69300533E96 /* iPhone.storyboard in Resources */,
+				4882837B19A4AA3700C4097C /* Neris-Thin.otf in Resources */,
+				4882837619A4AA3700C4097C /* Neris-BoldItalic.otf in Resources */,
+				487BFEA6199CF1FA00C4B7ED /* mistraRSS.rss in Resources */,
+				4869F8721993B58100533E96 /* Images.xcassets in Resources */,
+				4882837819A4AA3700C4097C /* Neris-LightItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4869F8751993B58100533E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4869F8831993B58100533E96 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6442427749124CF7957E467A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0546ABB2AF64B8ABC40557D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4869F8581993B58100533E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				480EB34C199A4DD100A67213 /* QuoteRequestViewController.m in Sources */,
+				48145BB119B9C975006823EB /* MistraCategory.m in Sources */,
+				48145BBC19B9CBDB006823EB /* MistraFormation.xcdatamodeld in Sources */,
+				48145BB219B9C975006823EB /* MistraCategory+CRUD.m in Sources */,
+				4869F8701993B58100533E96 /* AppDelegate.m in Sources */,
+				4869F8981994FAB800533E96 /* ContentViewController.m in Sources */,
+				480EAE951998A70B00A67213 /* MistraHelper.m in Sources */,
+				484424D219B5BAE200FDBA34 /* ContactTableViewCell.m in Sources */,
+				4869F8921993BE3700533E96 /* MenuTableViewController.m in Sources */,
+				48145BB319B9C975006823EB /* MistraItem.m in Sources */,
+				48145BB019B9C975006823EB /* MistraArticle+CRUD.m in Sources */,
+				4882838419A6249400C4097C /* BlogTableViewCell.m in Sources */,
+				4882835D19A4877300C4097C /* MenuHeaderTableViewCell.m in Sources */,
+				4882836319A493C400C4097C /* MistraFormationAppearance.m in Sources */,
+				4869F86C1993B58100533E96 /* main.m in Sources */,
+				4869F8951994D75F00533E96 /* HomeViewController.m in Sources */,
+				487BFEA4199CE93B00C4B7ED /* BlogContentViewController.m in Sources */,
+				48145BAF19B9C975006823EB /* MistraArticle.m in Sources */,
+				4882835919A393C200C4097C /* NSError+Display.m in Sources */,
+				4882836019A48B4900C4097C /* MenuTableViewCell.m in Sources */,
+				484424CF19B5BA3E00FDBA34 /* ContactViewController.m in Sources */,
+				4882836719A49EBC00C4097C /* UIColor+HexColors.m in Sources */,
+				487BFEA1199CC34A00C4B7ED /* BlogTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4869F8731993B58100533E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4869F8851993B58100533E96 /* Mistra_FormationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4869F87D1993B58100533E96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4869F85B1993B58100533E96 /* Mistra Formation */;
+			targetProxy = 4869F87C1993B58100533E96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4869F8681993B58100533E96 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4869F8691993B58100533E96 /* en */,
+				4882838019A4EF3F00C4097C /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4869F8811993B58100533E96 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4869F8821993B58100533E96 /* en */,
+				4882838119A4EF3F00C4097C /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4869F8861993B58100533E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4869F8871993B58100533E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4869F8891993B58100533E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5A2B9A3693C40EA89EE4B8A /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_FAST_MATH = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mistra Formation/Mistra Formation-Prefix.pch";
+				GCC_UNROLL_LOOPS = YES;
+				INFOPLIST_FILE = "Mistra Formation/Mistra Formation-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LLVM_LTO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2D23392F-22A9-43E9-A8A1-A3B4A19F9731";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4869F88A1993B58100533E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5A2B9A3693C40EA89EE4B8A /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_FAST_MATH = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mistra Formation/Mistra Formation-Prefix.pch";
+				GCC_UNROLL_LOOPS = YES;
+				INFOPLIST_FILE = "Mistra Formation/Mistra Formation-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LLVM_LTO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2D23392F-22A9-43E9-A8A1-A3B4A19F9731";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4869F88C1993B58100533E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mistra Formation.app/Mistra Formation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mistra Formation/Mistra Formation-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Mistra FormationTests/Mistra FormationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4869F88D1993B58100533E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mistra Formation.app/Mistra Formation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Mistra Formation/Mistra Formation-Prefix.pch";
+				INFOPLIST_FILE = "Mistra FormationTests/Mistra FormationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4869F8571993B58100533E96 /* Build configuration list for PBXProject "Mistra Formation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4869F8861993B58100533E96 /* Debug */,
+				4869F8871993B58100533E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4869F8881993B58100533E96 /* Build configuration list for PBXNativeTarget "Mistra Formation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4869F8891993B58100533E96 /* Debug */,
+				4869F88A1993B58100533E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4869F88B1993B58100533E96 /* Build configuration list for PBXNativeTarget "Mistra FormationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4869F88C1993B58100533E96 /* Debug */,
+				4869F88D1993B58100533E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		48145BBA19B9CBDB006823EB /* MistraFormation.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48145BBB19B9CBDB006823EB /* MistraFormation.xcdatamodel */,
+			);
+			currentVersion = 48145BBB19B9CBDB006823EB /* MistraFormation.xcdatamodel */;
+			path = MistraFormation.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4869F8541993B58100533E96 /* Project object */;
+}

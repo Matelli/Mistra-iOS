@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="1.0" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MistraArticle" representedClassName="MistraArticle" parentEntity="MistraItem" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="parentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MistraCategory" inverseName="articles" inverseEntity="MistraCategory" syncable="YES"/>
+    </entity>
+    <entity name="MistraCategory" representedClassName="MistraCategory" parentEntity="MistraItem" syncable="YES">
+        <attribute name="summary" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="MistraArticle" inverseName="parentCategory" inverseEntity="MistraArticle" syncable="YES"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="MistraCategory" inverseName="parentCategory" inverseEntity="MistraCategory" syncable="YES"/>
+        <relationship name="parentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MistraCategory" inverseName="categories" inverseEntity="MistraCategory" syncable="YES"/>
+    </entity>
+    <entity name="MistraItem" representedClassName="MistraItem" isAbstract="YES" syncable="YES">
+        <attribute name="contentType" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MistraArticle" positionX="0" positionY="0" width="128" height="73"/>
+        <element name="MistraCategory" positionX="-189" positionY="0" width="128" height="103"/>
+        <element name="MistraItem" positionX="-99" positionY="-124" width="128" height="88"/>
+    </elements>
+</model>
