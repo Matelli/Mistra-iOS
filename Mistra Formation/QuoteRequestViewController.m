@@ -7,6 +7,7 @@
 //
 
 #import "QuoteRequestViewController.h"
+#import "NSError+Display.h"
 @import AddressBook;
 @import AddressBookUI;
 
@@ -116,16 +117,28 @@
     }
     else
     {
-        // Send Quote
-        [[MistraHelper helper] sendQuoteRequestWithInformations:@{@"aics_Formation_":self.subjectField.text,
-                                                                  @"aics_name":self.nameField.text,
-                                                                  @"aics_phone":self.phoneField.text,
-                                                                  @"aics_email":self.emailField.text,
-                                                                  @"aics_Ville_souhaite":self.cityField.text,
-                                                                  @"aics_Socit":self.companyField.text,
-                                                                  @"aics_message":self.commentsField.text,
-                                                                  @"send_mail":@"1"
-                                                                  }];
+        //Prepare Quote
+        MistraQuote * quote = [MistraQuote quote];
+        quote.subject = self.subjectField.text;
+        quote.name = self.nameField.text;
+        quote.phone = self.phoneField.text;
+        quote.email = self.emailField.text;
+        quote.city = self.cityField.text;
+        quote.company = self.companyField.text;
+        quote.message = self.commentsField.text;
+        
+        [[MistraQuote appDelegate] saveUserContextWithCompletion:^(BOOL success, NSError *error)
+        {
+            if (success)
+            {
+                // Send Quote
+                [[MistraHelper helper] sendQuoteRequests];
+            }
+            else
+            {
+                [error displayLocalizedError];
+            }
+        }];
     }
 }
 

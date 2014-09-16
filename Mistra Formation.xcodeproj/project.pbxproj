@@ -54,6 +54,9 @@
 		4882837C19A4AA3700C4097C /* Neris-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4882837219A4AA3700C4097C /* Neris-ThinItalic.otf */; };
 		4882838419A6249400C4097C /* BlogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4882838319A6249400C4097C /* BlogTableViewCell.m */; };
 		488283AE19A759EA00C4097C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 488283AD19A759EA00C4097C /* Settings.bundle */; };
+		48C23FDB19C834B9002CC6C8 /* MistraUser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48C23FD919C834B9002CC6C8 /* MistraUser.xcdatamodeld */; };
+		48C23FE719C836A6002CC6C8 /* MistraQuote+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C23FE619C836A6002CC6C8 /* MistraQuote+CRUD.m */; };
+		48C23FEA19C84170002CC6C8 /* MistraQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C23FE919C84170002CC6C8 /* MistraQuote.m */; };
 		E1BFC87261A143238D0C9666 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6D3AAB950094B549A7653A0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +145,11 @@
 		4882838219A6249400C4097C /* BlogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogTableViewCell.h; sourceTree = "<group>"; };
 		4882838319A6249400C4097C /* BlogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogTableViewCell.m; sourceTree = "<group>"; };
 		488283AD19A759EA00C4097C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Ressources/Settings.bundle; sourceTree = SOURCE_ROOT; };
+		48C23FDA19C834B9002CC6C8 /* MistraUser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MistraUser.xcdatamodel; sourceTree = "<group>"; };
+		48C23FE519C836A6002CC6C8 /* MistraQuote+CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MistraQuote+CRUD.h"; sourceTree = "<group>"; };
+		48C23FE619C836A6002CC6C8 /* MistraQuote+CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MistraQuote+CRUD.m"; sourceTree = "<group>"; };
+		48C23FE819C84170002CC6C8 /* MistraQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MistraQuote.h; sourceTree = "<group>"; };
+		48C23FE919C84170002CC6C8 /* MistraQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MistraQuote.m; sourceTree = "<group>"; };
 		C5A2B9A3693C40EA89EE4B8A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E6D3AAB950094B549A7653A0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -197,6 +205,11 @@
 				480EAE931998A70B00A67213 /* MistraHelper.h */,
 				480EAE941998A70B00A67213 /* MistraHelper.m */,
 				48145BBA19B9CBDB006823EB /* MistraFormation.xcdatamodeld */,
+				48C23FD919C834B9002CC6C8 /* MistraUser.xcdatamodeld */,
+				48C23FE819C84170002CC6C8 /* MistraQuote.h */,
+				48C23FE919C84170002CC6C8 /* MistraQuote.m */,
+				48C23FE519C836A6002CC6C8 /* MistraQuote+CRUD.h */,
+				48C23FE619C836A6002CC6C8 /* MistraQuote+CRUD.m */,
 				48145BAD19B9C975006823EB /* MistraItem.h */,
 				48145BAE19B9C975006823EB /* MistraItem.m */,
 				48145BA519B9C975006823EB /* MistraArticle.h */,
@@ -509,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48C23FEA19C84170002CC6C8 /* MistraQuote.m in Sources */,
 				480EB34C199A4DD100A67213 /* QuoteRequestViewController.m in Sources */,
 				48145BB119B9C975006823EB /* MistraCategory.m in Sources */,
 				48145BBC19B9CBDB006823EB /* MistraFormation.xcdatamodeld in Sources */,
@@ -517,12 +531,14 @@
 				4869F8981994FAB800533E96 /* ContentViewController.m in Sources */,
 				480EAE951998A70B00A67213 /* MistraHelper.m in Sources */,
 				484424D219B5BAE200FDBA34 /* ContactTableViewCell.m in Sources */,
+				48C23FE719C836A6002CC6C8 /* MistraQuote+CRUD.m in Sources */,
 				4869F8921993BE3700533E96 /* MenuTableViewController.m in Sources */,
 				48145BB319B9C975006823EB /* MistraItem.m in Sources */,
 				48145BB019B9C975006823EB /* MistraArticle+CRUD.m in Sources */,
 				4882838419A6249400C4097C /* BlogTableViewCell.m in Sources */,
 				4882835D19A4877300C4097C /* MenuHeaderTableViewCell.m in Sources */,
 				4882836319A493C400C4097C /* MistraFormationAppearance.m in Sources */,
+				48C23FDB19C834B9002CC6C8 /* MistraUser.xcdatamodeld in Sources */,
 				4869F86C1993B58100533E96 /* main.m in Sources */,
 				4869F8951994D75F00533E96 /* HomeViewController.m in Sources */,
 				487BFEA4199CE93B00C4B7ED /* BlogContentViewController.m in Sources */,
@@ -780,6 +796,16 @@
 			);
 			currentVersion = 48145BBB19B9CBDB006823EB /* MistraFormation.xcdatamodel */;
 			path = MistraFormation.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		48C23FD919C834B9002CC6C8 /* MistraUser.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48C23FDA19C834B9002CC6C8 /* MistraUser.xcdatamodel */,
+			);
+			currentVersion = 48C23FDA19C834B9002CC6C8 /* MistraUser.xcdatamodel */;
+			path = MistraUser.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

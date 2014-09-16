@@ -17,7 +17,7 @@
 
 + (NSManagedObjectContext *)context
 {
-    return [[self appDelegate] managedObjectContext];
+    return [[self appDelegate] managedObjectContentContext];
 }
 
 - (void)destroy

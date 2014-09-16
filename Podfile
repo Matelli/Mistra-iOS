@@ -3,6 +3,7 @@ pod 'AFNetworking', '~> 2.2'
 pod 'BlockRSSParser', '~> 2.1'
 pod 'ZipArchive'
 pod 'FlurrySDK'
+pod 'AFOnoResponseSerializer'
 
 post_install do | installer |
   require 'fileutils'

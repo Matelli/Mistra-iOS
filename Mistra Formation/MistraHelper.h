@@ -9,6 +9,7 @@
 #import <BlockRSSParser/RSSParser.h>
 #import "MistraCategory+CRUD.h"
 #import "MistraArticle+CRUD.h"
+#import "MistraQuote+CRUD.h"
 
 #define kMistraHelperContentTypeTraining @"MistraHelperContentTypeTraining"
 #define kMistraHelperContentTypeTutorial @"MistraHelperContentTypeTutorial"
@@ -23,7 +24,8 @@
 
 + (NSArray *)contentForType:(NSString*)contentType;
 + (NSURL*) contentDirectoryURL;
-+ (NSURL*) coreDatabaseURL;
++ (NSURL*) coreContentDatabaseURL;
++ (NSURL*) coreUserDatabaseURL;
 
 /**
  *  The singleton instance for MistraHelper
@@ -82,11 +84,10 @@
 + (NSURL*)urlForArticleWithID:(NSUInteger)articleID;
 
 /**
- *  Sends a request for quote to the Mistra server containing the provided informations
+ *  Sends all unsent quote requests to the Mistra server
  *
- *  @param informations A dictionary containing the values of the quote form (at least an email)
  */
-- (void)sendQuoteRequestWithInformations:(NSDictionary*)informations;
+- (void)sendQuoteRequests;
 
 + (void)openAddress;
 + (void)openPhone;

@@ -8,6 +8,8 @@
 
 #import "MistraHelper.h"
 #import <AFNetworking/AFNetworking.h>
+#import <AFOnoResponseSerializer/AFOnoResponseSerializer.h>
+#import <Ono/Ono.h>
 #import <ZipArchive/ZipArchive.h>
 #import "NSError+Display.h"
 #import "AppDelegate.h"
@@ -15,7 +17,8 @@
 @interface MistraHelper ()
 
 @property (nonatomic, strong) NSOperationQueue * operationQueue;
-@property (nonatomic, strong) AFHTTPSessionManager * sessionManager;
+@property (nonatomic, strong) AFHTTPSessionManager * apiSessionManager;
+@property (nonatomic, strong) AFHTTPSessionManager * quoteSessionManager;
 
 @end
 
@@ -56,17 +59,31 @@
     return _operationQueue;
 }
 
-- (AFHTTPSessionManager *)sessionManager
+- (AFHTTPSessionManager *)apiSessionManager
 {
     // Using dispatch_once to ensure we don't create multiple session manager
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^
     {
-        self->_sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://api.mistra.fr"]];
-        self->_sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        self->_apiSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://api.mistra.fr"]];
+        self->_apiSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
     });
     
-    return _sessionManager;
+    return _apiSessionManager;
+}
+
+- (AFHTTPSessionManager *)quoteSessionManager
+{
+    // Using dispatch_once to ensure we don't create multiple session manager
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^
+                  {
+                      self->_quoteSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://www.mistra.fr/"]];
+                      self->_quoteSessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+                      self->_quoteSessionManager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
+                  });
+    
+    return _quoteSessionManager;
 }
 
 #pragma mark - Public Methods
@@ -109,9 +126,14 @@
     return __ContentDirectoryURL;
 }
 
-+ (NSURL *)coreDatabaseURL
++ (NSURL *)coreContentDatabaseURL
 {
     return [[self contentDirectoryURL] URLByAppendingPathComponent:@"MistraFormation.sqlite"];
+}
+
++ (NSURL *)coreUserDatabaseURL
+{
+    return [[[self contentDirectoryURL] URLByDeletingLastPathComponent] URLByAppendingPathComponent:@"MistraUser.sqlite"];
 }
 
 + (MistraArticle *)articleWithID:(NSUInteger)articleID
@@ -153,43 +175,11 @@
     return returnValue;
 }
 
-- (void)sendQuoteRequestWithInformations:(NSDictionary *)informations
-{
-#warning validate behavior is correct
-    [Flurry logEvent:@"Quote Request Sending" withParameters:informations];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    manager.securityPolicy.SSLPinningMode = AFSSLPinningModeNone;
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager POST:@"https://www.mistra.fr/index.php?option=com_aicontactsafe"
-       parameters:nil
-constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
-    {
-        [informations enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-        {
-            [formData appendPartWithFormData:[(NSString*)obj dataUsingEncoding:NSUTF8StringEncoding] name:key];
-        }];
-        
-    }
-          success:^(AFHTTPRequestOperation *operation, id responseObject)
-    {
-        NSString * response = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-        NSLog(@"Server Response : %@", response);
-        [Flurry logEvent:@"Quote Request Sent"];
-    }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error)
-    {
-        [Flurry logEvent:@"Quote Request Failed"];
-        [error displayLocalizedError];
-    }];
-}
-
 - (void) updateContentWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     NSDate * currentDate = [NSDate date];
     NSDate * lastUpdateDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"MistraFormationLastUpdate"];
-    [self.sessionManager GET:[NSString stringWithFormat:@"/incre.php?date=%.0f",lastUpdateDate.timeIntervalSince1970]
+    [self.apiSessionManager GET:[NSString stringWithFormat:@"/incre.php?date=%.0f",lastUpdateDate.timeIntervalSince1970]
                   parameters:nil
                      success:^(NSURLSessionDataTask *task, id responseObject)
      {
@@ -221,7 +211,7 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
                   
                   if ([updateContext save:nil])
                   {
-                      [[MistraCategory appDelegate] saveContextWithCompletion:^(BOOL success, NSError *error)
+                      [[MistraCategory appDelegate] saveContentContextWithCompletion:^(BOOL success, NSError *error)
                        {
                            if (success)
                            {
@@ -303,6 +293,14 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:@"MistraHelperRSSFeedUpdateFailedNotification" object:error];
     }];
+}
+
+- (void)sendQuoteRequests
+{
+    for (MistraQuote * quote in [MistraQuote allQuotes])
+    {
+        [self sendQuoteRequestWithQuote:quote];
+    }
 }
 
 + (NSSet *)setFromArray:(NSArray *)array
@@ -442,6 +440,8 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
     //The rest is done asynchronously to ensure smooth experience
     [self.operationQueue addOperationWithBlock:^
     {
+        [self sendQuoteRequests];
+        
         // Check if images directory exists
         if (![[NSFileManager defaultManager] fileExistsAtPath:[[MistraHelper contentDirectoryURL]  URLByAppendingPathComponent:@"images"].path])
         {
@@ -504,7 +504,7 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
     }
     
     //Creating a weakSelf to avoid capture within the block
-    [self.sessionManager setDownloadTaskDidFinishDownloadingBlock:^NSURL *(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, NSURL *location)
+    [self.apiSessionManager setDownloadTaskDidFinishDownloadingBlock:^NSURL *(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, NSURL *location)
      {
          NSString * url = downloadTask.originalRequest.URL.path;
          url = [url stringByReplacingCharactersInRange:NSRangeFromString(@"(0,1)") withString:@""];
@@ -526,7 +526,7 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
             NSURLComponents * urlComponents = [NSURLComponents componentsWithString:@"http://www.mistra.fr"];
             urlComponents.path = [NSString stringWithFormat:@"/%@",htlmPath];
             NSURLRequest * request = [NSURLRequest requestWithURL:urlComponents.URL];
-            NSURLSessionDownloadTask * downloadTask = [self.sessionManager downloadTaskWithRequest:request
+            NSURLSessionDownloadTask * downloadTask = [self.apiSessionManager downloadTaskWithRequest:request
                                                                                           progress:nil
                                                                                        destination:nil
                                                                                  completionHandler:nil];
@@ -682,6 +682,54 @@ constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
         [set addObject:json];
     }
     return set;
+}
+
+- (void)sendQuoteRequestWithQuote:(MistraQuote*)quote
+{
+    [Flurry logEvent:@"Quote Request Sending"];
+    [self.quoteSessionManager GET:@"index.php?option=com_aicontactsafe"
+                       parameters:nil
+                          success:^(NSURLSessionDataTask *task, ONOXMLDocument * responseObject)
+    {
+        NSMutableDictionary * parameters = [NSMutableDictionary dictionary];
+        NSArray * array = @[@"aics_Formations_", @"aics_name", @"aics_phone", @"aics_email", @"aics_Ville_souhaite", @"aics_Socit", @"aics_message", @"current_url"];
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"NOT SELF IN %@", array];
+        [responseObject enumerateElementsWithXPath:@"//form[@id=\"adminForm_4\"]//input" usingBlock:^(ONOXMLElement *element, NSUInteger idx, BOOL *stop)
+         {
+             if (element[@"name"] && [predicate evaluateWithObject:element[@"name"]] && element[@"value"])
+             {
+                 [parameters setObject:element[@"value"] forKey:element[@"name"]];
+             }
+         }];
+        
+        [parameters setObject:quote.subject forKey:@"aics_Formations_"];
+        [parameters setObject:quote.name forKey:@"aics_name"];
+        [parameters setObject:quote.phone forKey:@"aics_phone"];
+        [parameters setObject:quote.email forKey:@"aics_email"];
+        [parameters setObject:quote.city forKey:@"aics_Ville_souhaite"];
+        [parameters setObject:quote.company forKey:@"aics_Socit"];
+        [parameters setObject:quote.message forKey:@"aics_message"];
+        [parameters setObject:@"https://www.mistra.fr/contacts" forKey:@"current_url"];
+        
+        [self.quoteSessionManager POST:@"index.php?option=com_aicontactsafe"
+                            parameters:parameters
+                               success:^(NSURLSessionDataTask *task, id responseObject)
+        {
+            [Flurry logEvent:@"Quote Request Sent"];
+            [quote destroy];
+            [[MistraQuote appDelegate] saveUserContextWithCompletion:nil];
+        }
+                               failure:^(NSURLSessionDataTask *task, NSError *error)
+        {
+            [Flurry logEvent:@"Quote Request Failed"];
+            [error displayLocalizedError];
+        }];
+    }
+                          failure:^(NSURLSessionDataTask *task, NSError *error)
+    {
+        [Flurry logEvent:@"Quote Request Failed"];
+        [error displayLocalizedError];
+    }];
 }
 
 @end

@@ -12,11 +12,16 @@ typedef void(^contextSaveCompletion)(BOOL success, NSError * error);
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *writerContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContentContext;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *contentWriterContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectContentModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentContentStoreCoordinator;
 
-- (void)saveContextWithCompletion:(contextSaveCompletion)completion;
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectUserContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectUserModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentUserStoreCoordinator;
+
+- (void)saveContentContextWithCompletion:(contextSaveCompletion)completion;
+- (void)saveUserContextWithCompletion:(contextSaveCompletion)completion;
 
 @end

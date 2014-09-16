@@ -13,10 +13,14 @@
 
 @implementation AppDelegate
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize writerContext = _writerContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize managedObjectContentContext = _managedObjectContentContext;
+@synthesize contentWriterContext = _contentWriterContext;
+@synthesize managedObjectContentModel = _managedObjectContentModel;
+@synthesize persistentContentStoreCoordinator = _persistentContentStoreCoordinator;
+
+@synthesize managedObjectUserContext = _managedObjectUserContext;
+@synthesize managedObjectUserModel = _managedObjectUserModel;
+@synthesize persistentUserStoreCoordinator = _persistentUserStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -62,9 +66,9 @@
 }
 
 #pragma mark - Core Data methods
-- (void)saveContextWithCompletion:(contextSaveCompletion)completion
+- (void)saveContentContextWithCompletion:(contextSaveCompletion)completion
 {
-    __weak __block NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    __weak __block NSManagedObjectContext *managedObjectContext = self.managedObjectContentContext;
     if (managedObjectContext != nil)
     {
         [managedObjectContext performBlock:^{
@@ -81,7 +85,7 @@
             }
             else
             {
-                __weak __block NSManagedObjectContext *writerContext = self.writerContext;
+                __weak __block NSManagedObjectContext *writerContext = self.contentWriterContext;
                 if (writerContext)
                 {
                     [writerContext performBlock:^
@@ -89,7 +93,10 @@
                          NSError *error = nil;
                          if ([writerContext hasChanges] && ![writerContext save:&error])
                          {
-                             completion(NO, error);
+                             if (completion)
+                             {
+                                 completion(NO, error);
+                             }
                              /*
                              // Replace this implementation with code to handle the error appropriately.
                              // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -99,9 +106,43 @@
                          }
                          else
                          {
-                             completion(YES, nil);
+                             if (completion)
+                             {
+                                 completion(YES, nil);
+                             }
                          }
                      }];
+                }
+            }
+        }];
+    }
+}
+
+- (void)saveUserContextWithCompletion:(contextSaveCompletion)completion
+{
+    __weak __block NSManagedObjectContext *managedObjectContext = self.managedObjectUserContext;
+    if (managedObjectContext != nil)
+    {
+        [managedObjectContext performBlock:^{
+            NSError *error = nil;
+            if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
+            {
+                if (completion)
+                {
+                    completion(NO, error);
+                }
+                /*
+                 // Replace this implementation with code to handle the error appropriately.
+                 // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                 NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                 abort();
+                 */
+            }
+            else
+            {
+                if (completion)
+                {
+                    completion(YES, nil);
                 }
             }
         }];
@@ -112,59 +153,59 @@
 
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
-- (NSManagedObjectContext *)managedObjectContext
+- (NSManagedObjectContext *)managedObjectContentContext
 {
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
+    if (_managedObjectContentContext != nil) {
+        return _managedObjectContentContext;
     }
     
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    NSPersistentStoreCoordinator *coordinator = [self persistentContentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-        _managedObjectContext.parentContext = self.writerContext;
-        _managedObjectContext.undoManager = nil;
+        _managedObjectContentContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        _managedObjectContentContext.parentContext = self.contentWriterContext;
+        _managedObjectContentContext.undoManager = nil;
     }
-    return _managedObjectContext;
+    return _managedObjectContentContext;
 }
 
 // Returns the managed object context for the application that is destined for background updates.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
-- (NSManagedObjectContext *)writerContext
+- (NSManagedObjectContext *)contentWriterContext
 {
-    if (_writerContext != nil) {
-        return _writerContext;
+    if (_contentWriterContext != nil) {
+        return _contentWriterContext;
     }
     
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    NSPersistentStoreCoordinator *coordinator = [self persistentContentStoreCoordinator];
     if (coordinator != nil) {
-        _writerContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        [_writerContext setPersistentStoreCoordinator:coordinator];
-        [_writerContext setUndoManager:nil];
+        _contentWriterContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+        [_contentWriterContext setPersistentStoreCoordinator:coordinator];
+        [_contentWriterContext setUndoManager:nil];
     }
-    return _writerContext;
+    return _contentWriterContext;
 }
 
 // Returns the managed object model for the application.
 // If the model doesn't already exist, it is created from the application's model.
-- (NSManagedObjectModel *)managedObjectModel
+- (NSManagedObjectModel *)managedObjectContentModel
 {
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
+    if (_managedObjectContentModel != nil) {
+        return _managedObjectContentModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"MistraFormation" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
+    _managedObjectContentModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectContentModel;
 }
 
 // Returns the persistent store coordinator for the application.
 // If the coordinator doesn't already exist, it is created and the application's store added to it.
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+- (NSPersistentStoreCoordinator *)persistentContentStoreCoordinator
 {
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
+    if (_persistentContentStoreCoordinator != nil) {
+        return _persistentContentStoreCoordinator;
     }
     
-    NSURL *storeURL = [MistraHelper coreDatabaseURL];
+    NSURL *storeURL = [MistraHelper coreContentDatabaseURL];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:storeURL.path])
     {
@@ -185,8 +226,8 @@
     }
     
     NSError *error = nil;
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+    _persistentContentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectContentModel]];
+    if (![_persistentContentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
         /*
          Replace this implementation with code to handle the error appropriately.
          
@@ -214,7 +255,73 @@
         abort();
     }
     
-    return _persistentStoreCoordinator;
+    return _persistentContentStoreCoordinator;
+}
+
+- (NSManagedObjectContext *)managedObjectUserContext
+{
+    if (_managedObjectUserContext != nil) {
+        return _managedObjectUserContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentUserStoreCoordinator];
+    if (coordinator != nil) {
+        _managedObjectUserContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+        _managedObjectUserContext.persistentStoreCoordinator = self.persistentUserStoreCoordinator;
+        _managedObjectUserContext.undoManager = nil;
+    }
+    return _managedObjectUserContext;
+}
+
+- (NSManagedObjectModel *)managedObjectUserModel
+{
+    if (_managedObjectUserModel != nil) {
+        return _managedObjectUserModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"MistraUser" withExtension:@"momd"];
+    _managedObjectUserModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectUserModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentUserStoreCoordinator
+{
+    if (_persistentUserStoreCoordinator != nil) {
+        return _persistentUserStoreCoordinator;
+    }
+    
+    NSURL *storeURL = [MistraHelper coreUserDatabaseURL];
+    
+    NSError *error = nil;
+    _persistentUserStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectUserModel]];
+    if (![_persistentUserStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+         
+         Typical reasons for an error here include:
+         * The persistent store is not accessible;
+         * The schema for the persistent store is incompatible with current managed object model.
+         Check the error message to determine what the actual problem was.
+         
+         
+         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
+         
+         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
+         * Simply deleting the existing store:
+         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
+         
+         * Performing automatic lightweight migration by passing the following dictionary as the options parameter:
+         @{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES}
+         
+         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
+         
+         */
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _persistentUserStoreCoordinator;
 }
 
 @end
