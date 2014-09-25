@@ -9,6 +9,7 @@
 #import "MenuTableViewController.h"
 #import "ContentViewController.h"
 #import "MenuHeaderTableViewCell.h"
+#import <BTUtils/GTMNSString+HTML.h>
 
 @interface MenuTableViewController () <UISearchDisplayDelegate>
 
@@ -167,11 +168,8 @@
     else
     {
         MenuHeaderTableViewCell * header = [self.tableView dequeueReusableCellWithIdentifier:@"headerView"];
-        header.headerLabel.text = [[NSAttributedString alloc] initWithData:[[target[section] title] dataUsingEncoding:NSUnicodeStringEncoding]
-                                                                   options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
-                                                        documentAttributes:nil
-                                                                     error:nil
-                                   ].string;
+
+        header.headerLabel.text = [[target[section] title] gtm_stringByUnescapingFromHTML];
         
         return header;
     }
