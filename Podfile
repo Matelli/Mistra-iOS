@@ -4,6 +4,7 @@ pod 'BlockRSSParser', '~> 2.1'
 pod 'ZipArchive'
 pod 'FlurrySDK'
 pod 'AFOnoResponseSerializer'
+pod 'BTUtils'
 
 post_install do | installer |
   require 'fileutils'

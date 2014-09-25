@@ -10,6 +10,7 @@
 #import "BlogContentViewController.h"
 #import "NSError+Display.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <BTUtils/GTMNSString+HTML.h>
 
 @interface BlogTableViewController () <UISearchDisplayDelegate>
 
@@ -162,11 +163,7 @@
     RSSItem * item = targetArray[indexPath.row];
     
     cell.textLabel.text = item.title;
-    cell.detailTextLabel.attributedText = [[NSAttributedString alloc] initWithData:[item.itemDescription dataUsingEncoding:NSUnicodeStringEncoding]
-                                                                           options:@{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType}
-                                                                documentAttributes:nil
-                                                                             error:nil
-                                           ];
+    cell.detailTextLabel.text = item.itemDescription.gtm_stringByUnescapingFromHTML;
     
     [cell.imageView setImageWithURL:[NSURL URLWithString:item.imagesFromContent.firstObject]];
     return cell;
