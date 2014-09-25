@@ -68,12 +68,11 @@
 #pragma mark - Core Data methods
 - (void)saveContentContextWithCompletion:(contextSaveCompletion)completion
 {
-    __weak __block NSManagedObjectContext *managedObjectContext = self.managedObjectContentContext;
-    if (managedObjectContext != nil)
+    if (self.managedObjectContentContext != nil)
     {
-        [managedObjectContext performBlock:^{
+        [self.managedObjectContentContext performBlock:^{
             NSError *error = nil;
-            if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
+            if ([self.managedObjectContentContext hasChanges] && ![self.managedObjectContentContext save:&error])
             {
                 completion(NO, error);
                 /*
@@ -85,13 +84,12 @@
             }
             else
             {
-                __weak __block NSManagedObjectContext *writerContext = self.contentWriterContext;
-                if (writerContext)
+                if (self.contentWriterContext)
                 {
-                    [writerContext performBlock:^
+                    [self.contentWriterContext performBlock:^
                      {
                          NSError *error = nil;
-                         if ([writerContext hasChanges] && ![writerContext save:&error])
+                         if ([self.contentWriterContext hasChanges] && ![self.contentWriterContext save:&error])
                          {
                              if (completion)
                              {
