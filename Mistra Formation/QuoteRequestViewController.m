@@ -145,33 +145,46 @@
 #pragma mark - UIAlertViewDelegate
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    BOOL flurryUserDidRequestAutoFill = NO;
-    if (buttonIndex > 0)
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void)
     {
-        flurryUserDidRequestAutoFill = YES;
-        // If we aren't authorized yet
-        if (ABAddressBookGetAuthorizationStatus() != kABAuthorizationStatusAuthorized)
+        BOOL flurryUserDidRequestAutoFill = NO;
+        if (buttonIndex > 0)
         {
-            // Request Access to the user's contacts
-            ABAddressBookRequestAccessWithCompletion(ABAddressBookCreateWithOptions(NULL, nil), ^(bool granted, CFErrorRef error)
-             {
-                 if (granted)
-                 {
-                     [self selectContact];
-                 }
-                 else
-                 {
-                     UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"L'accès à vos contact est requis pour le remplissage automatique" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-                     [alert show];
-                 }
-             });
+            flurryUserDidRequestAutoFill = YES;
+            // If we aren't authorized yet
+            if (ABAddressBookGetAuthorizationStatus() != kABAuthorizationStatusAuthorized)
+            {
+                // Request Access to the user's contacts
+                ABAddressBookRequestAccessWithCompletion(ABAddressBookCreateWithOptions(NULL, nil), ^(bool granted, CFErrorRef error)
+                {
+                    if (granted)
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^(void)
+                        {
+                            [self selectContact];
+                        });
+                    }
+                    else
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^(void)
+                        {
+                            UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Erreur" message:@"L'accès à vos contact est requis pour le remplissage automatique" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                            [alert show];
+                        });
+                    }
+                });
+            }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(), ^(void)
+                {
+                    [self selectContact];
+                });
+            }
         }
-        else
-        {
-            [self selectContact];
-        }
-    }
-    [Flurry logEvent:@"QuoteRequest Autofill" withParameters:@{@"User-Requested": @(flurryUserDidRequestAutoFill)}];
+        [Flurry logEvent:@"QuoteRequest Autofill" withParameters:@{@"User-Requested": @(flurryUserDidRequestAutoFill)}];
+    });
+    
 }
 
 - (void) selectContact
@@ -187,9 +200,9 @@
     [Flurry logEvent:@"QuoteRequest Autofill success"];
     NSString * name = [NSString stringWithFormat:@"%@ %@",
                        (__bridge_transfer NSString*)ABRecordCopyValue(contact,
-                                                                                                         kABPersonFirstNameProperty),
+                                                                      kABPersonFirstNameProperty),
                        (__bridge_transfer NSString*)ABRecordCopyValue(contact,
-                                                                                                                                                                                    kABPersonLastNameProperty)];
+                                                                      kABPersonLastNameProperty)];
     self.nameField.text = name;
     
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(contact,
@@ -263,14 +276,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
