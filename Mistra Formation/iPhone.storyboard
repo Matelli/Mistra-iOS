@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vnA-d7-fMm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vnA-d7-fMm">
     <dependencies>
         <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -537,9 +537,10 @@
                                     <constraints>
                                         <constraint firstItem="sjN-hb-ByP" firstAttribute="leading" secondItem="MTg-a8-0Hy" secondAttribute="trailing" constant="8" symbolic="YES" id="0W0-ZQ-6Ku"/>
                                         <constraint firstAttribute="centerY" secondItem="MTg-a8-0Hy" secondAttribute="centerY" id="7it-Ti-9mm"/>
-                                        <constraint firstAttribute="centerY" secondItem="sjN-hb-ByP" secondAttribute="centerY" id="RmG-UU-ocP"/>
+                                        <constraint firstItem="sjN-hb-ByP" firstAttribute="top" secondItem="hYb-dE-SVw" secondAttribute="top" constant="11" id="CCp-Gg-ihA"/>
                                         <constraint firstItem="MTg-a8-0Hy" firstAttribute="leading" secondItem="hYb-dE-SVw" secondAttribute="leading" constant="8" id="fCg-c1-ZeI"/>
                                         <constraint firstAttribute="trailing" secondItem="sjN-hb-ByP" secondAttribute="trailing" constant="20" symbolic="YES" id="g8V-ff-SGM"/>
+                                        <constraint firstAttribute="bottom" secondItem="sjN-hb-ByP" secondAttribute="bottom" constant="11" id="lda-zJ-80s"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1051,7 +1052,7 @@
         <image name="Logo_Viadeo" width="90" height="39"/>
         <image name="Logo_twitter" width="90" height="18"/>
         <image name="arrow_nav" width="20" height="20"/>
-        <image name="background_home_with_logo" width="320" height="238"/>
+        <image name="background_home_with_logo" width="320" height="237"/>
         <image name="bouton_menu_blog_home" width="320" height="1"/>
         <image name="bouton_menu_contact_home" width="320" height="1"/>
         <image name="bouton_menu_devis_home" width="320" height="1"/>
