@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Mistra Formation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "48DC99BA19E2904B00306891"
+               BuildableName = "Mistra Formation KIF Tests.xctest"
+               BlueprintName = "Mistra Formation KIF Tests"
+               ReferencedContainer = "container:Mistra Formation.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -45,6 +59,16 @@
                BlueprintIdentifier = "4882839519A74D2000C4097C"
                BuildableName = "TestFlightLibraryTests.xctest"
                BlueprintName = "TestFlightLibraryTests"
+               ReferencedContainer = "container:Mistra Formation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "48DC99BA19E2904B00306891"
+               BuildableName = "Mistra Formation KIF Tests.xctest"
+               BlueprintName = "Mistra Formation KIF Tests"
                ReferencedContainer = "container:Mistra Formation.xcodeproj">
             </BuildableReference>
          </TestableReference>
