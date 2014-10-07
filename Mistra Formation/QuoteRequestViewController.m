@@ -259,11 +259,72 @@
 #pragma mark - UITextFieldDelegate
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField resignFirstResponder];
-    return YES;
+    if (textField == self.subjectField)
+    {
+        [self.nameField becomeFirstResponder];
+        //[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.nameField)
+    {
+        [self.phoneField becomeFirstResponder];
+        //[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.phoneField)
+    {
+        [self.emailField becomeFirstResponder];
+        //[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.emailField)
+    {
+        [self.cityField becomeFirstResponder];
+        //[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.cityField)
+    {
+        [self.companyField becomeFirstResponder];
+        //[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.companyField)
+    {
+        [self.commentsField becomeFirstResponder];
+    }
+    return NO;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (textField == self.subjectField)
+    {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.nameField)
+    {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.phoneField)
+    {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.emailField)
+    {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.cityField)
+    {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+    else if (textField == self.companyField)
+    {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
 }
 
 #pragma mark - UITextViewDelegate
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
 -(void)textViewDidChange:(UITextView *)textView
 {
     if (textView.text.length > self.maxCharacters)

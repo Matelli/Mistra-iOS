@@ -26,4 +26,9 @@
     [super tearDown];
 }
 
+- (void)testPass
+{
+    XCTAssert(YES, @"YES is not true... The rules of reality have been rewritten, oh noes !");
+}
+
 @end
