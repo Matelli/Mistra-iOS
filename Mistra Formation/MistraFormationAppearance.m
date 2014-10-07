@@ -73,7 +73,7 @@
 
 + (UIImage*)backButton
 {
-    return [[UIImage imageNamed:@"arrow_right"] imageWithAlignmentRectInsets:UIEdgeInsetsMake(0, 0, 10, 0)];
+    return [[UIImage imageNamed:@"arrow_right"] imageWithAlignmentRectInsets:UIEdgeInsetsMake(0, 0, 4, 0)];
 }
 
 + (UIImage*)cellBackground
