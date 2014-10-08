@@ -874,6 +874,7 @@
 				INFOPLIST_FILE = "Mistra FormationTests/Mistra FormationTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -892,6 +893,7 @@
 				INFOPLIST_FILE = "Mistra FormationTests/Mistra FormationTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -917,6 +919,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -937,6 +940,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};
