@@ -91,7 +91,7 @@
 
 + (void)openAddress;
 + (void)openPhone;
-+ (void)openEmail;
++ (void)openEmailFromViewController:(UIViewController*)viewController;
 + (void)openFacebook;
 + (void)openTwitter;
 + (void)openGooglePlus;

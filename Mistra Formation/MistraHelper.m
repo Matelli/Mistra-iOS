@@ -13,8 +13,9 @@
 #import <ZipArchive/ZipArchive.h>
 #import "NSError+Display.h"
 #import "AppDelegate.h"
+@import MessageUI;
 
-@interface MistraHelper ()
+@interface MistraHelper () <MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) NSOperationQueue * operationQueue;
 @property (nonatomic, strong) AFHTTPSessionManager * apiSessionManager;
@@ -346,14 +347,16 @@
     }
 }
 
-+ (void)openEmail
++ (void)openEmailFromViewController:(UIViewController*)viewController
 {
     [Flurry logEvent:@"Opened Email"];
-    NSString *stringURL = @"mailto:formation@mistra.com";
-    NSURL *url = [NSURL URLWithString:stringURL];
-    if ([[UIApplication sharedApplication] canOpenURL:url])
+    if ([MFMailComposeViewController canSendMail])
     {
-        [[UIApplication sharedApplication] openURL:url];
+        MFMailComposeViewController * mailController = [[MFMailComposeViewController alloc] init];
+        mailController.mailComposeDelegate = [MistraHelper helper];
+        [mailController setToRecipients:@[@"formation@mistra.com"]];
+        [mailController setSubject:@"Demande de contact"];
+        [viewController presentViewController:mailController animated:YES completion:nil];
     }
     else
     {
@@ -730,6 +733,12 @@
         [Flurry logEvent:@"Quote Request Failed"];
         [error displayLocalizedError];
     }];
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

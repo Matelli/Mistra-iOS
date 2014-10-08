@@ -75,7 +75,7 @@
 
 - (IBAction)emailClicked:(id)sender
 {
-    [MistraHelper openEmail];
+    [MistraHelper openEmailFromViewController:self];
 }
 
 - (IBAction)facebookClicked:(id)sender
