@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C0EFC7EB-397C-4B8D-986B-557C60088C0C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Mistra Formation</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4E08F850BBA9BFD72A94EF6EE465F0E0E94016B0</key>
+		<string>https://bitbucket.org/matellios/mistraformation-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Mistra Formation.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4E08F850BBA9BFD72A94EF6EE465F0E0E94016B0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/matellios/mistraformation-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4E08F850BBA9BFD72A94EF6EE465F0E0E94016B0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4E08F850BBA9BFD72A94EF6EE465F0E0E94016B0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mistraformation-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
