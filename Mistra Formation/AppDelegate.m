@@ -10,6 +10,7 @@
 #import "MistraFormationAppearance.h"
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <FlurrySDK/Flurry.h>
 
 @implementation AppDelegate
 

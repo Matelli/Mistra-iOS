@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "MenuTableViewController.h"
 #import <AFNetworking/AFNetworking.h>
+#import <FlurrySDK/Flurry.h>
 
 @interface HomeViewController ()
 

@@ -8,6 +8,7 @@
 
 #import "ContactViewController.h"
 #import "MistraFormationAppearance.h"
+#import <FlurrySDK/Flurry.h>
 
 @interface ContactViewController ()
 

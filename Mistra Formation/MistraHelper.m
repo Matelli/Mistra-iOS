@@ -13,6 +13,9 @@
 #import <ZipArchive/ZipArchive.h>
 #import "NSError+Display.h"
 #import "AppDelegate.h"
+#import <FlurrySDK/Flurry.h>
+#import <BlockRSSParser/RSSParser.h>
+
 @import MessageUI;
 
 @interface MistraHelper () <MFMailComposeViewControllerDelegate>

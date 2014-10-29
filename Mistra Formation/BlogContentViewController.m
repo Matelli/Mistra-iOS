@@ -7,6 +7,7 @@
 //
 
 #import "BlogContentViewController.h"
+#import <FlurrySDK/Flurry.h>
 
 @interface BlogContentViewController () <UIWebViewDelegate>
 

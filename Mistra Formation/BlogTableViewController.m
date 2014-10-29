@@ -11,6 +11,7 @@
 #import "NSError+Display.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <BTUtils/GTMNSString+HTML.h>
+#import <FlurrySDK/Flurry.h>
 
 @interface BlogTableViewController () <UISearchDisplayDelegate>
 

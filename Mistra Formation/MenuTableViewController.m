@@ -10,6 +10,7 @@
 #import "ContentViewController.h"
 #import "MenuHeaderTableViewCell.h"
 #import <BTUtils/GTMNSString+HTML.h>
+#import <FlurrySDK/Flurry.h>
 
 @interface MenuTableViewController () <UISearchDisplayDelegate>
 
