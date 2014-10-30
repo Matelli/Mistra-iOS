@@ -46,6 +46,9 @@
 {
     [super viewDidAppear:animated];
     [Flurry logEvent:@"Blog Content Page" withParameters:@{@"title": self.content.title} timed:YES];
+    UIBarButtonItem * shareButtonItem;
+    shareButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share:)];
+    self.navigationItem.rightBarButtonItem = shareButtonItem;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -65,6 +68,15 @@
     self.webView.delegate = nil;
 }
 
+- (IBAction)share:(id)sender
+{
+    NSURL * shareURL = self.content.link;
+    NSString * title = self.content.title;
+    
+    UIActivityViewController * activityViewcontroller = [[UIActivityViewController alloc] initWithActivityItems:@[title, shareURL] applicationActivities:nil];
+    [self presentViewController:activityViewcontroller animated:YES completion:nil];
+}
+
 #pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
@@ -78,16 +90,4 @@
         return NO;
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

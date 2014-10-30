@@ -504,7 +504,16 @@
                  NSRange rangeOfSource = [imageTag rangeOfString:@"src=\""];
                  
                  // And add it to the list of images path
-                 [htmlPaths addObject:[imageTag substringWithRange:NSRangeFromString([NSString stringWithFormat:@"(%lu,%lu)",(unsigned long)rangeOfSource.location+rangeOfSource.length,(unsigned long)imageTag.length-rangeOfSource.location-rangeOfSource.length-1])]];
+                 // this code is potentially unsafe since dealing with range and stuff, so we put it in a try-catch block
+                 @try {
+                     [htmlPaths addObject:[imageTag substringWithRange:NSRangeFromString([NSString stringWithFormat:@"(%lu,%lu)",(unsigned long)rangeOfSource.location+rangeOfSource.length,(unsigned long)imageTag.length-rangeOfSource.location-rangeOfSource.length-1])]];
+                 }
+                 @catch (NSException *exception) {
+                     
+                     // failed to extract string
+                     
+                 }
+                 
              }
          }];
     }
