@@ -445,6 +445,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rJO-CH-aQ4">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                            </activityIndicatorView>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gk4-qg-TnE">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -455,9 +458,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="rJO-CH-aQ4" secondAttribute="centerY" id="5J6-O2-G1g"/>
                             <constraint firstAttribute="trailing" secondItem="Gk4-qg-TnE" secondAttribute="trailing" id="Blb-Of-gBa"/>
                             <constraint firstItem="Gk4-qg-TnE" firstAttribute="leading" secondItem="50j-yi-8cd" secondAttribute="leading" id="EbB-44-Ra1"/>
                             <constraint firstItem="N8d-OQ-qj4" firstAttribute="top" secondItem="Gk4-qg-TnE" secondAttribute="bottom" id="GoH-yj-otG"/>
+                            <constraint firstAttribute="centerX" secondItem="rJO-CH-aQ4" secondAttribute="centerX" id="TDx-3z-mg1"/>
                             <constraint firstItem="Gk4-qg-TnE" firstAttribute="top" secondItem="S0j-Ug-QXf" secondAttribute="bottom" id="wue-dj-h8H"/>
                         </constraints>
                     </view>
