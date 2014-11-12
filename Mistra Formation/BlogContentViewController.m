@@ -33,7 +33,10 @@
     
     self.title = self.content.title;
     self.webView.delegate = self;
+    // Cache la webView pour afficher le spinner pendant le chargement
+    [self.webView setHidden:YES];
     [self.webView loadHTMLString:[self.content.content stringByReplacingOccurrencesOfString:@"src=\"//" withString:@"src=\"https://"] baseURL:nil];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -78,7 +81,10 @@
 }
 
 #pragma mark - UIWebViewDelegate
-
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    webView.hidden = NO;
+}
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
    
