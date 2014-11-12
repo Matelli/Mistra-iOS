@@ -133,7 +133,7 @@
         case 0:
         {
             cell.textLabel.text = @"Adresse";
-            cell.detailTextLabel.text = @"19 rue Bérangers, 75003 Paris";
+            cell.detailTextLabel.text = @"19 rue Béranger, 75003 Paris";
             cell.imageView.image = [UIImage imageNamed:@"ico_adresse_contact"];
             break;
         }

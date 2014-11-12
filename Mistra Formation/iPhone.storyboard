@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vnA-d7-fMm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vnA-d7-fMm">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -318,9 +318,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Mjb-bc-w4a" firstAttribute="top" secondItem="6SV-t4-kxu" secondAttribute="bottom" id="8me-Xt-ERm"/>
                             <constraint firstItem="eFY-iG-5FU" firstAttribute="leading" secondItem="j6W-Pf-7NL" secondAttribute="leading" id="BpI-eW-mNz"/>
                             <constraint firstItem="eFY-iG-5FU" firstAttribute="top" secondItem="j6W-Pf-7NL" secondAttribute="top" id="GuM-Ak-WMf"/>
-                            <constraint firstItem="Mjb-bc-w4a" firstAttribute="top" secondItem="6SV-t4-kxu" secondAttribute="bottom" id="K9d-3W-b2z"/>
                             <constraint firstItem="6SV-t4-kxu" firstAttribute="height" secondItem="eFY-iG-5FU" secondAttribute="height" multiplier="1.5" id="TfX-Dd-RO7"/>
                             <constraint firstAttribute="trailing" secondItem="6SV-t4-kxu" secondAttribute="trailing" id="YIC-ZD-pN5"/>
                             <constraint firstAttribute="trailing" secondItem="eFY-iG-5FU" secondAttribute="trailing" id="gvm-2Z-STh"/>
@@ -626,7 +626,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="una-lv-pnw">
-                                    <rect key="frame" x="109" y="36" width="102" height="22"/>
+                                    <rect key="frame" x="109" y="36" width="102" height="23"/>
                                     <state key="normal" image="Logo_twitter">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -1060,7 +1060,7 @@
         <image name="Logo_Google+" width="90" height="27"/>
         <image name="Logo_Linkedin" width="90" height="45"/>
         <image name="Logo_Viadeo" width="90" height="39"/>
-        <image name="Logo_twitter" width="90" height="18"/>
+        <image name="Logo_twitter" width="90" height="23"/>
         <image name="arrow_nav" width="20" height="20"/>
         <image name="background_home_with_logo" width="320" height="237"/>
         <image name="bouton_menu_blog_home" width="320" height="1"/>
