@@ -166,7 +166,12 @@
     RSSItem * item = targetArray[indexPath.row];
     
     cell.textLabel.text = item.title;
-    cell.detailTextLabel.text = item.itemDescription.gtm_stringByUnescapingFromHTML;
+    NSString * detail = item.itemDescription.gtm_stringByUnescapingFromHTML;
+    detail = [detail stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
+    detail = [detail stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
+    
+    cell.detailTextLabel.text = detail;
+    
     
     // Clean l'image residuelle
     cell.imageView.image = nil;
