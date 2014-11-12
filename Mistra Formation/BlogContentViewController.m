@@ -33,7 +33,7 @@
     
     self.title = self.content.title;
     self.webView.delegate = self;
-    [self.webView loadHTMLString:self.content.content baseURL:nil];
+    [self.webView loadHTMLString:[self.content.content stringByReplacingOccurrencesOfString:@"src=\"//" withString:@"src=\"https://"] baseURL:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -78,8 +78,10 @@
 }
 
 #pragma mark - UIWebViewDelegate
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
+   
     if (navigationType == UIWebViewNavigationTypeOther)
     {
         return YES;
