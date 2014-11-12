@@ -168,6 +168,9 @@
     cell.textLabel.text = item.title;
     cell.detailTextLabel.text = item.itemDescription.gtm_stringByUnescapingFromHTML;
     
+    // Clean l'image residuelle
+    cell.imageView.image = nil;
+    
     [cell.imageView setImageWithURL:[NSURL URLWithString:item.imagesFromContent.firstObject]];
     return cell;
 }
