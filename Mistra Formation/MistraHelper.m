@@ -291,11 +291,11 @@
     [RSSParser parseRSSFeedForRequest:request success:^(NSArray *feedItems)
      {
          [NSKeyedArchiver archiveRootObject:feedItems toFile:[[MistraHelper contentDirectoryURL] URLByAppendingPathComponent:@"mistraRSS.rss"].path];
-         [[NSNotificationCenter defaultCenter] postNotificationName:@"MistraHelperRSSFeedUpdatedNotification" object:self.rssBlogContent];
+         [[NSNotificationCenter defaultCenter] postNotificationName:kMistraHelperRSSFeedUpdatedNotification object:self.rssBlogContent];
      }
                               failure:^(NSError *error)
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"MistraHelperRSSFeedUpdateFailedNotification" object:error];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMistraHelperRSSFeedUpdateFailedNotification object:error];
     }];
 }
 
@@ -509,7 +509,7 @@
                      [htmlPaths addObject:[imageTag substringWithRange:NSRangeFromString([NSString stringWithFormat:@"(%lu,%lu)",(unsigned long)rangeOfSource.location+rangeOfSource.length,(unsigned long)imageTag.length-rangeOfSource.location-rangeOfSource.length-1])]];
                  }
                  @catch (NSException *exception) {
-                     
+                     NSLog(@"exception : %@", exception);
                      // failed to extract string
                      
                  }
