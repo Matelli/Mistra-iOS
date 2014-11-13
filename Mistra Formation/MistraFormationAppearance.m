@@ -64,11 +64,25 @@
 
 + (UIImage*)navigationBackground
 {
-    UIImage * gradient = [UIImage imageNamed:@"bg-degade-head"];
+    UIImage * gradient;
+    
+    if ([[UIScreen mainScreen] bounds].size.width==375.0f) {
+        gradient = [UIImage imageNamed: @"bg-degade-head-6"];
+    }
+    else if ([[UIScreen mainScreen] bounds].size.width==414.0f) {
+        gradient = [UIImage imageNamed: @"bg-degade-head-6+"];
+    }
+    else{
+        gradient = [UIImage imageNamed: @"bg-degade-head"];
+        
+    }
+    
     UIImage * mirroredGradient = [UIImage imageWithCGImage:gradient.CGImage
                                                      scale:gradient.scale
                                                orientation:UIImageOrientationUpMirrored];
-    return mirroredGradient;
+    UIImage * resizable = [mirroredGradient resizableImageWithCapInsets:UIEdgeInsetsZero
+                                                           resizingMode:UIImageResizingModeStretch];
+    return resizable;
 }
 
 + (UIImage*)backButton
