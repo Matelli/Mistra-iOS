@@ -46,6 +46,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    
     self.tableView.contentOffset = CGPointMake(0, self.searchDisplayController.searchBar.frame.size.height);
     self.content = [MistraHelper helper].rssBlogContent;
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -60,6 +61,8 @@
                                              selector:@selector(rssUpdateFailedWithNotification:)
                                                  name:kMistraHelperRSSFeedUpdateFailedNotification
                                                object:nil];
+    
+    [self startRefresh];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -99,6 +102,7 @@
     self.content = notification.object;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationMiddle];
     [self.refreshControl endRefreshing];
+    self.title = @"Blog";
 }
 
 - (void)rssUpdateFailedWithNotification:(NSNotification*)notification
@@ -202,6 +206,5 @@
         destination.content = selectedItem;
     }
 }
-
 
 @end
