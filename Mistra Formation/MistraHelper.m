@@ -291,6 +291,7 @@
     [RSSParser parseRSSFeedForRequest:request success:^(NSArray *feedItems)
      {
          [NSKeyedArchiver archiveRootObject:feedItems toFile:[[MistraHelper contentDirectoryURL] URLByAppendingPathComponent:@"mistraRSS.rss"].path];
+         self.rssBlogContent = feedItems;
          [[NSNotificationCenter defaultCenter] postNotificationName:kMistraHelperRSSFeedUpdatedNotification object:self.rssBlogContent];
      }
                               failure:^(NSError *error)
