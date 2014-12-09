@@ -178,7 +178,7 @@
     
     
     // Clean l'image residuelle
-    cell.imageView.image = nil;
+    cell.imageView.image = [UIImage imageNamed:@"no_image"];
     
     [cell.imageView setImageWithURL:[NSURL URLWithString:item.imagesFromContent.firstObject]];
     return cell;

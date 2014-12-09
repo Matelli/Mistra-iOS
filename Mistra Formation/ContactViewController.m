@@ -149,7 +149,7 @@
         case 2:
         {
             cell.textLabel.text = @"Email";
-            cell.detailTextLabel.text = @"formation@mistra.fr";
+            cell.detailTextLabel.text = NSLocalizedString(@"contact_email", @"email de contact pour mistra");
             cell.imageView.image = [UIImage imageNamed:@"ico_mail_contact"];
             break;
         }

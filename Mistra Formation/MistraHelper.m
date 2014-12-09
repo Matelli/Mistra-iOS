@@ -358,7 +358,7 @@
     {
         MFMailComposeViewController * mailController = [[MFMailComposeViewController alloc] init];
         mailController.mailComposeDelegate = [MistraHelper helper];
-        [mailController setToRecipients:@[@"formation@mistra.com"]];
+        [mailController setToRecipients:@[NSLocalizedString(@"contact_email", @"email de contact pour mistra")]];
         [mailController setSubject:@"Demande de contact"];
         [viewController presentViewController:mailController animated:YES completion:nil];
     }
